@@ -30,7 +30,7 @@ Para instalar via composer, adicione o repositório abaixo, assim como a depende
 
 Depois disto, execute `composer install`
 
-### Manual Installation
+### Instalação Manual
 
 Faça o download dos arquivos e inclua o `autoload.php` onde deseja utilizar
 
@@ -49,14 +49,12 @@ composer install
 
 ## Exemplo de utilização
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
 Siga as orientações do processo de instalação e então execute o seguinte:
 
 ```php
 
 /*********************************************************************************************
  * Definindo as configurações para o consumo do serviço rest do bb 
- * 
  * ******************************************************************************************/
 $config = Swagger\Client\Configuration::getDefaultConfiguration();
 $config->setAmbienteBB("T");
@@ -65,12 +63,11 @@ $config->setChaveAplicacaoBB("SEU_DEVELOPER_APPLICATION_KEY");
 //client_id
 $config->setUsername("SEU_CLIENTE_ID");
 //client_secret
-$config->setPassword("SUA_CLIENTE_SECRETE");
+$config->setPassword("SUA_CLIENTE_SECRET");
 
 
 /*********************************************************************************************
  * Obtendo access token e utilizando no configurador
- * 
  * ******************************************************************************************/
 $oauth2Api = new Swagger\Client\Api\Oauth2Api(
     new GuzzleHttp\Client(),
@@ -87,7 +84,6 @@ try {
  
 /*********************************************************************************************
  * Efetuando chamada a API usando o token
- *
  * ******************************************************************************************/
 
 $apiInstance = new Swagger\Client\Api\QrCodesApi(
