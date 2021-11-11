@@ -49,10 +49,23 @@ $apiInstance = new Swagger\Client\Api\QrCodesApi(
 $body = new \Swagger\Client\Model\ArrecadacaoqrcodesBody(); // \Swagger\Client\Model\ArrecadacaoqrcodesBody | 
 
 try {
-	
-	$body['numero_convenio']=1;
+    $body['numero_convenio']=62191;
+    $body['indicador_codigo_barras'] = "S";
+    $body['codigo_guia_recebimento'] = "83660000000199800053846101172358000000000000";
+    $body['email_devedor'] = "contribuinte.silva@provedor.com.br";
+    $body['codigo_pais_telefone_devedor'] = 55;
+    $body['ddd_telefone_devedor'] = 61;
+    $body['numero_telefone_devedor'] = "999731240";
+    $body['codigo_solicitacao_banco_central_brasil'] = "88a33759-78b0-43b7-8c60-e5e3e7cb55fe";
+    $body['descricao_solicitacao_pagamento'] = "Arrecadação Pix";
+    $body['valor_original_solicitacao'] = 18.98;
+    $body['cpf_devedor'] = "19917885250";
+    $body['cnpj_devedor'] = null;
+    $body['nome_devedor'] = "Contribuinte da Silva";
+    $body['quantidade_segundo_expiracao'] = 3600;
+    $body['lista_informacao_adicional'] = null;
 	$result = $apiInstance->criaBoletoBancarioId($body, $config->getAccessToken(), $config->getChaveAplicacaoBB());
-    print_r($result);
+	print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QrCodesApi->criaBoletoBancarioId: ', $e->getMessage(), PHP_EOL;
 }
