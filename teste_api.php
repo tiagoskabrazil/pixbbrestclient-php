@@ -1,0 +1,61 @@
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+/*********************************************************************************************
+ * Definindo as configurações para o consumo do serviço rest do bb 
+ * 
+ * ******************************************************************************************/
+$config = Swagger\Client\Configuration::getDefaultConfiguration();
+$config->setAmbienteBB("T");
+//developer_application_key
+$config->setChaveAplicacaoBB("d27b077907ffab60136de17dc0050656b911a5bb");
+//client_id
+$config->setUsername("eyJpZCI6IjJmYWRkNTYtY2QwMi00ODNhLTgiLCJjb2RpZ29QdWJsaWNhZG9yIjowLCJjb2RpZ29Tb2Z0d2FyZSI6MjIyODgsInNlcXVlbmNpYWxJbnN0YWxhY2FvIjoxfQ");
+//client_secret
+$config->setPassword("eyJpZCI6IjdhNjM3NTMtYjA3ZC00ODEyLWE4IiwiY29kaWdvUHVibGljYWRvciI6MCwiY29kaWdvU29mdHdhcmUiOjIyMjg4LCJzZXF1ZW5jaWFsSW5zdGFsYWNhbyI6MSwic2VxdWVuY2lhbENyZWRlbmNpYWwiOjEsImFtYmllbnRlIjoiaG9tb2xvZ2FjYW8iLCJpYXQiOjE2MzE3MzQ4MjM2MzF9");
+
+
+/*********************************************************************************************
+ * Obtendo access token e utilizando no configurador
+ * 
+ * ******************************************************************************************/
+$oauth2Api = new Swagger\Client\Api\Oauth2Api(
+    new GuzzleHttp\Client(),
+    $config
+    );
+
+try {
+    $token = $oauth2Api->gerarAccessToken();
+    print("Token oauth2 obtido:" . $token);
+    $config->setAccessToken($token);
+    print("Configurador atualizado.");
+} catch (Exception $e) {
+    echo 'ERRO->', $e->getMessage(), PHP_EOL;
+}
+
+ 
+/*********************************************************************************************
+ * Efetuando chamada a API usando o token
+ *
+ * ******************************************************************************************/
+
+$apiInstance = new Swagger\Client\Api\QrCodesApi(
+    new GuzzleHttp\Client(),
+    $config
+);
+
+
+$body = new \Swagger\Client\Model\ArrecadacaoqrcodesBody(); // \Swagger\Client\Model\ArrecadacaoqrcodesBody | 
+
+try {
+	
+	$body['numero_convenio']=1;
+	$result = $apiInstance->criaBoletoBancarioId($body, $config->getAccessToken(), $config->getChaveAplicacaoBB());
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling QrCodesApi->criaBoletoBancarioId: ', $e->getMessage(), PHP_EOL;
+}
+
+?>
+
