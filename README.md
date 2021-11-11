@@ -69,10 +69,7 @@ $config->setPassword("SUA_CLIENTE_SECRET");
 /*********************************************************************************************
  * Obtendo access token e utilizando no configurador
  * ******************************************************************************************/
-$oauth2Api = new Swagger\Client\Api\Oauth2Api(
-    new GuzzleHttp\Client(),
-    $config
-    );
+$oauth2Api = new Swagger\Client\Api\Oauth2Api(new GuzzleHttp\Client(),$config);
 
 try {
     $token = $oauth2Api->gerarAccessToken();
@@ -86,13 +83,8 @@ try {
  * Efetuando chamada a API usando o token
  * ******************************************************************************************/
 
-$apiInstance = new Swagger\Client\Api\QrCodesApi(
-    new GuzzleHttp\Client(),
-    $config
-);
-
-
-$body = new \Swagger\Client\Model\ArrecadacaoqrcodesBody(); // \Swagger\Client\Model\ArrecadacaoqrcodesBody | 
+$apiInstance = new Swagger\Client\Api\QrCodesApi(new GuzzleHttp\Client(),$config);
+$body = new \Swagger\Client\Model\ArrecadacaoqrcodesBody(); 
 
 try {
 	
