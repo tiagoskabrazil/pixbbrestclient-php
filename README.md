@@ -55,15 +55,25 @@ Siga as orientações do processo de instalação e então execute o seguinte:
 
 /*********************************************************************************************
  * Definindo as configurações para o consumo do serviço rest do bb 
+ * 
  * ******************************************************************************************/
 $config = Swagger\Client\Configuration::getDefaultConfiguration();
-$config->setAmbienteBB("T");
+$config->setAmbienteBB("T"); // em ambiente T usamos gw-dev-app-key nas requisições, em ambiente P, usamos gw-app-key.
+
+$config->setHost("https://api.sandbox.bb.com.br/pix-bb/v1"); // HOST BB HMG 1
+//$config->setHost("https://api.hm.bb.com.br/pix-bb/v1"); // HOST BB HMG 2
+//$config->setHost("https://api.bb.com.br/pix-bb/v1"); // HOST BB PRODUÇÃO
+
+$config->setUrlAutenticacaoOauth2("https://oauth.sandbox.bb.com.br/oauth/token"); //URL OAUTH BB 
+//$config->setUrlAutenticacaoOauth2("https://oauth.hm.bb.com.br/oauth/token");  //URL OAUTH BB 
+//$config->setUrlAutenticacaoOauth2("https://oauth.hm.bb.com.br/oauth/token");  //URL OAUTH BB PRD
+
 //developer_application_key
-$config->setChaveAplicacaoBB("SEU_DEVELOPER_APPLICATION_KEY");
+$config->setChaveAplicacaoBB("d27b077907ffab60136de17dc0050656b911a5bb");
 //client_id
-$config->setUsername("SEU_CLIENTE_ID");
+$config->setUsername("eyJpZCI6IjJmYWRkNTYtY2QwMi00ODNhLTgiLCJjb2RpZ29QdWJsaWNhZG9yIjowLCJjb2RpZ29Tb2Z0d2FyZSI6MjIyODgsInNlcXVlbmNpYWxJbnN0YWxhY2FvIjoxfQ");
 //client_secret
-$config->setPassword("SUA_CLIENTE_SECRET");
+$config->setPassword("eyJpZCI6IjdhNjM3NTMtYjA3ZC00ODEyLWE4IiwiY29kaWdvUHVibGljYWRvciI6MCwiY29kaWdvU29mdHdhcmUiOjIyMjg4LCJzZXF1ZW5jaWFsSW5zdGFsYWNhbyI6MSwic2VxdWVuY2lhbENyZWRlbmNpYWwiOjEsImFtYmllbnRlIjoiaG9tb2xvZ2FjYW8iLCJpYXQiOjE2MzE3MzQ4MjM2MzF9");
 
 
 /*********************************************************************************************
