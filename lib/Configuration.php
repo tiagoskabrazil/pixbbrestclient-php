@@ -75,13 +75,7 @@ class Configuration
      */
     protected $password = '';
 
-    /**
-     * The host
-     *
-     * @var string
-     */
-    protected $host = 'https://api.sandbox.bb.com.br/pix-bb/v1';
-
+  
     /**
      * User agent of the HTTP request, set to "PHP-Swagger" by default
      *
@@ -133,6 +127,15 @@ class Configuration
      * Lista com as permissões de acesso necessárias para o token a ser gerado no processo de autenticacao
      */
     protected $escopoPermissoesOauth2 = "pix.arrecadacao-info pix.arrecadacao-requisicao";
+    
+    /**
+     * The host
+     *
+     * @var string
+     */
+    protected $host = 'https://api.sandbox.bb.com.br/pix-bb/v1';
+    
+    
     
     
     /**

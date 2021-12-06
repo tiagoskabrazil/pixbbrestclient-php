@@ -1,6 +1,7 @@
 # Swagger\Client\QrCodesApi
 
-All URIs are relative to *https://api.sandbox.bb.com.br/pix-bb/v1*
+Todas URLs são relativas a *https://api.sandbox.bb.com.br/pix-bb/v1*
+Em produção, as URL são relativas a https://api.bb.com.br/pix-bb/v1
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
