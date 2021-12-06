@@ -2,8 +2,7 @@
 API para gerenciar os serviços referentes ao PIX (Sistema de Pagamentos Instantâneos) no BB.
 
 - API version: 1.8
-- Build package: io.swagger.codegen.v3.generators.php.PhpClientCodegen
-[https://developers.bb.com.br](https://developers.bb.com.br)
+- Mais informações sobre a API do Bando do Brasil Arrecadação Integrada ao PIX V1, acesse https://developers.bb.com.br
 
 ## Requerimentos
 
@@ -35,7 +34,7 @@ Depois disto, execute `composer install`
 Faça o download dos arquivos e inclua o `autoload.php` onde deseja utilizar
 
 ```php
-    require_once('/path/to/pixbbapi/vendor/autoload.php');
+    require_once('/path/para/pixbbapi/vendor/autoload.php');
 ```
 
 ## Tests
@@ -47,16 +46,18 @@ composer install
 ./vendor/bin/phpunit
 ```
 
-## Exemplo de utilização
+## Exemplo de utilização - Geração de QRCode
 
 Siga as orientações do processo de instalação e então execute o seguinte:
 
 ```php
 
-/*********************************************************************************************
- * Definindo as configurações para o consumo do serviço rest do bb 
- * 
- * ******************************************************************************************/
+/*******************************************************************************************************
+ * Definindo as configurações para o consumo da API Arrecadação Integrada ao PIX do BB.
+ * Aqui definimos a URL para autenticação oauth2, a URL de chamada para a API ( temos teste, hmg e prd)
+ * e as credenciais da aplicação, que são obtidas em app.developers.bb.com.br
+ * *****************************************************************************************************/
+ 
 $config = Swagger\Client\Configuration::getDefaultConfiguration();
 $config->setAmbienteBB("T"); // em ambiente T usamos gw-dev-app-key nas requisições, em ambiente P, usamos gw-app-key.
 
