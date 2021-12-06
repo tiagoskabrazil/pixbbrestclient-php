@@ -90,7 +90,7 @@ try {
 
  
 /*********************************************************************************************
- * Efetuando chamada a API usando o token
+ * Efetuando chamada a API de geração de QRCode usando o token obtido
  * ******************************************************************************************/
 
 $apiInstance = new Swagger\Client\Api\QrCodesApi(new GuzzleHttp\Client(),$config);
@@ -113,13 +113,38 @@ try {
     $body['nome_devedor'] = "Contribuinte da Silva";
     $body['quantidade_segundo_expiracao'] = 3600;
     $body['lista_informacao_adicional'] = null;
-	$result = $apiInstance->criaBoletoBancarioId($body, $config->getAccessToken(), $config->getChaveAplicacaoBB());
+	 $result = $apiInstance->criaBoletoBancarioId($body, $config->getAccessToken(), $config->getChaveAplicacaoBB());
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling QrCodesApi->criaBoletoBancarioId: ', $e->getMessage(), PHP_EOL;
 }
 
+
 ?>
+
+OBS: $body também pode ser passado no formato JSON, conforme exemplo abaixo:
+
+  {
+                "numeroConvenio": 62191,
+                "indicadorCodigoBarras": "S",
+                "codigoGuiaRecebimento": "83660000000199800009846101173758000000000000",
+                "emailDevedor": "contribuinte.silva@provedor.com.br",
+                "codigoPaisTelefoneDevedor": 55,
+                "dddTelefoneDevedor": 61,
+                "numeroTelefoneDevedor": "999731240",
+                "codigoSolicitacaoBancoCentralBrasil": "88a33759-78b0-43b7-8c60-e5e3e7cb55fe",
+                "descricaoSolicitacaoPagamento": "Arrecadação Pix",
+                "valorOriginalSolicitacao": 19.98,
+                "cpfDevedor": "19917885250",
+                "nomeDevedor": "Contribuinte da Silva",
+                "quantidadeSegundoExpiracao": 3600,
+                "listaInformacaoAdicional": [
+                  {
+                    "codigoInformacaoAdicional": "IPTU",
+                    "textoInformacaoAdicional": "COTA ÚNICA 2021"
+                  }
+                ]
+  }
 
 ```
 
@@ -139,7 +164,7 @@ try {
 
 ## Documentação dos API Endpoints
 
-All URIs are relative to *https://api.sandbox.bb.com.br/pix-bb/v1*
+Urls relativas a *https://api.sandbox.bb.com.br/pix-bb/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
