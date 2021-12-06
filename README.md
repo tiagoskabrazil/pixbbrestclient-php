@@ -164,7 +164,7 @@ OBS: $body também pode ser passado no formato JSON, conforme exemplo abaixo:
 
 ## Documentação dos API Endpoints
 
-Urls relativas a *https://api.sandbox.bb.com.br/pix-bb/v1*
+Urls relativas a *https://api.sandbox.bb.com.br/pix-bb/v1* ( Ambiente de testes default do nosso cliente. Caso tenha sido selecionada outro ambiente, as urls serão relativas a ele.)
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
