@@ -213,7 +213,6 @@ try {
  * ******************************************************************************************/
 
 $apiInstance = new Swagger\Client\Api\QrCodesApi(new GuzzleHttp\Client(),$config);
-$body = new \Swagger\Client\Model\ArrecadacaoqrcodesBody(); 
 
 try {
 
