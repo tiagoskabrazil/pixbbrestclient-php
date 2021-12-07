@@ -2,7 +2,7 @@
 API para gerenciar os serviços referentes ao PIX (Sistema de Pagamentos Instantâneos) no BB.
 
 - API version: 1.8
-- Mais informações sobre a API do Bando do Brasil Arrecadação Integrada ao PIX V1, acesse https://developers.bb.com.br
+- Mais informações sobre a API do Banco do Brasil Arrecadação Integrada ao PIX V1, acesse https://developers.bb.com.br
 
 ## Requerimentos
 
